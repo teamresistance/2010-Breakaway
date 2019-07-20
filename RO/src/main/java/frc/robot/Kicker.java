@@ -11,7 +11,7 @@ public class Kicker implements Updatable {
     private double kickerSpeed;
     private double pivotSpeed;
 
-    public Kicker(Victor pivot, Victor kicker) {
+    public Kicker(Victor pivot, Victor kicker)    {
         this.pivot = pivot;
         this.kicker = kicker;
     }
@@ -22,10 +22,10 @@ public class Kicker implements Updatable {
     }
 
     public void update() {
-       if(JoystickIO.coJoystick.getY() >= .8 && IO.pivotUpperLimit.get()) {
-           pivot.set(pivotSpeed);
-       } else if(JoystickIO.coJoystick.getY() <= -.8 && IO.pivotLowerLimit.get()) {
+       if(JoystickIO.coJoystick.getY() <= -.8 && IO.pivotUpperLimit.get()) {
            pivot.set(-pivotSpeed);
+       } else if(JoystickIO.coJoystick.getY() >= .8 && IO.pivotLowerLimit.get()) {
+           pivot.set(pivotSpeed);
        //} else if(JoystickIO.pivotDownButton.isDown() && JoystickIO.pivotUpButton.isDown()) {
        //    pivot.set(0);
        } else {
