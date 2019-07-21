@@ -15,7 +15,7 @@ public class Flipper implements Updatable {
 
     public void init() {
         frameArm.set(0);
-        flipperSpeed = .5;
+        flipperSpeed = .8;
     }
 
     public void update() {

@@ -17,14 +17,14 @@ public class Kicker implements Updatable {
     }
 
     public void init() {
-        kickerSpeed = .5;
+        kickerSpeed = .8;
         pivotSpeed = .5;
     }
 
     public void update() {
-       if(JoystickIO.coJoystick.getY() <= -.8 && IO.pivotUpperLimit.get()) {
+       if(JoystickIO.coJoystick.getY() >= .8 && IO.pivotUpperLimit.get()) {
            pivot.set(-pivotSpeed);
-       } else if(JoystickIO.coJoystick.getY() >= .8 && IO.pivotLowerLimit.get()) {
+       } else if(JoystickIO.coJoystick.getY() <= -.8 && IO.pivotLowerLimit.get()) {
            pivot.set(pivotSpeed);
        //} else if(JoystickIO.pivotDownButton.isDown() && JoystickIO.pivotUpButton.isDown()) {
        //    pivot.set(0);
