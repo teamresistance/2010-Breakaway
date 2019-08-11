@@ -7,12 +7,12 @@ The teams solution was to have a bot that could kick a ball high, to get balls o
 To get over the barrier, they climb over it and flip upside down then use a bot flipper to right the bot.  During testing they found if they did it fast, it continued to roll into an upright position.  Sometimes.
 
 To accomplish this they have the following controls:
-* ●	Hardware
-* ○	RoboRIO
- * ○	Router
- * ○	VRM (or maybe able to get regulated 12vdc from the old PDP)
- *○	PDP (old)
-* ●	Tank Drive
+* Hardware
+** RoboRIO
+ **	Router
+ **	VRM (or maybe able to get regulated 12vdc from the old PDP)
+ **	PDP (old)
+* Tank Drive
  * ○	(2) Lefthand motors (2 Victor ESC’s - 1 PWM signal)
  * ○	(2) Righthand motors ( 2 Victor ESC’s - 1 PWM signal)
  * ○	Joysticks
