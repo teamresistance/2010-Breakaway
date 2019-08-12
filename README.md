@@ -31,4 +31,12 @@ To accomplish this they have the following controls:
     * (1) Button to Raise pivot position
     * (1) Opt. Use CoDriverJS, fwd is raise, bkwrd is lower 
 
+### Joystick Assignments
+
 ![Image of Joystick](https://github.com/teamresistance/RolloverBot-2019/blob/master/RO/images/joystick360.jpg)
+
+ Tag | Name
+ ----|-----------------
+  X1 | Left/Right -1.0/1.0
+  Y1 | Forward/Backward -1.0/1.0
+  
