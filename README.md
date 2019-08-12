@@ -1,4 +1,4 @@
-# RolloverBot-2010, Ohmer X
+# Ohmer-2010, Ohmer X, The Rollover Bot
 
 ### History
 
