@@ -35,8 +35,8 @@ To accomplish this they have the following controls:
 
 ![Image of Joystick](https://github.com/teamresistance/RolloverBot-2019/blob/master/RO/images/joystick360.jpg)
 
- Tag | Name
- ----|-----------------
-  X1 | Left/Right -1.0/1.0
-  Y1 | Forward/Backward -1.0/1.0
-  
+ Tag | Values | JS1 | JS2 | JS3
+ ----|--------|-----|-----|----
+  X1 | -1.0/1.0 | Left Fwd/Bkwd | Right Fwd/Bkwd | RO Bar Extend
+  Y1 | -1.0/1.0 | n/a | n/a | n/a | n/a
+  Tgr 1 | opn/Cls | n/a | n/a | CV Drive to target
