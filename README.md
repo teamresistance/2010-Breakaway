@@ -26,6 +26,7 @@ To get over the barrier, they climb over it and flip upside down then use a bot 
     * (2) Lefthand motors (2 Victor ESC’s - 1 PWM signal, y-Cable)
     * (2) Righthand motors ( 2 Victor ESC’s - 1 PWM signal, y-cable)
     * (3)Joysticks - 2 driver & 1 co-driver
+    * Driver JS's used for Left & Right Wheels
 * Flipper Note: the Flipper does not have end switches and the motor is powerful enough to break things.  When operating it, caution is advised.
     * (2) motors (2 Victor ESC’s - 1 PWM signal, y-cable)
     * (1) Co-driver JS fwd to extend Flipper, bkwd to retract
@@ -48,6 +49,8 @@ To get over the barrier, they climb over it and flip upside down then use a bot 
  ----|--------|-----|-----|----
   X1 | -1.0/1.0 | L-Wheels Fwd/Bkwd | R-Wheels Fwd/Bkwd | Flip Bar Ext/Retr
   Y1 | -1.0/1.0 | n/a | n/a | n/a | n/a
-  Tgr 1 | opn/Cls | n/a | n/a | CV Drive to target
+  X2 | -1.0/1.0 | n/a | n/a | Kicker Pivot Raise/Lower
+  Y2 | -1.0/1.0 | n/a | n/a | n/a | n/a
+  Tgr 1 | opn/cls | n/a | n/a | CV Drive to target
   Btn 2 | opn/cls | n/a | n/a | Toggle Kicker On/Off
 
