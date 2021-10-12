@@ -40,8 +40,8 @@ public class JS_IO {
     public static Axis axRightX = new Axis();       // Right JS X
 
     //Buttons
-    public static Button roExtButton = new Button();    //Rollover extend
-    public static Button roRetButton = new Button();    //Rollover retract
+    public static Button roExtBtn = new Button();    //Rollover extend
+    public static Button roRetBtn = new Button();    //Rollover retract
 
     public static Button kickerLowButton = new Button();    //Lower kicker, ball high
     public static Button kickerHiButton = new Button();   //Raise kicker, ball level
@@ -127,8 +127,8 @@ public class JS_IO {
         axRightY.setAxis(rightJoystick, 1);
 
         // Drive buttons
-        roExtButton.setButton(rightJoystick, 6);
-        roRetButton.setButton(rightJoystick, 4);
+        roExtBtn.setButton(rightJoystick, 6);
+        roRetBtn.setButton(rightJoystick, 4);
 
         kickerLowButton.setButton(rightJoystick, 5);
         kickerHiButton.setButton(rightJoystick, 3);
@@ -141,8 +141,8 @@ public class JS_IO {
         axRightDrive.setAxis(gamePad, 5); // right stick Y
 
         // Drive buttons
-        roExtButton.setButton(gamePad, 1);
-        roRetButton.setButton(gamePad, 2);
+        roExtBtn.setButton(gamePad, 1);
+        roRetBtn.setButton(gamePad, 2);
 
         kickerLowButton.setButton(gamePad, 3);
         kickerHiButton.setButton(gamePad, 4);
@@ -156,8 +156,8 @@ public class JS_IO {
         axRightDrive.setAxis(rightJoystick, 1);
 
         // Drive buttons
-        roExtButton.setButton(rightJoystick, 6);
-        roRetButton.setButton(rightJoystick, 4);
+        roExtBtn.setButton(rightJoystick, 6);
+        roRetBtn.setButton(rightJoystick, 4);
 
         kickerLowButton.setButton(rightJoystick, 5);
         kickerHiButton.setButton(rightJoystick, 3);
@@ -170,8 +170,8 @@ public class JS_IO {
         axRightDrive.setAxis(null, 0);
 
         // Drive buttons
-        roExtButton.setButton(null, 0);
-        roRetButton.setButton(null, 0);
+        roExtBtn.setButton(null, 0);
+        roRetBtn.setButton(null, 0);
 
         kickerLowButton.setButton(null, 0);
         kickerHiButton.setButton(null, 0);
