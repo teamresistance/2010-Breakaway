@@ -1,5 +1,7 @@
 package frc.robot.io.hdw_io;
 
+import edu.wpi.first.wpilibj.DigitalInput;
+import edu.wpi.first.wpilibj.DigitalOutput;
 import edu.wpi.first.wpilibj.Victor;
 
 public class IO {
@@ -19,6 +21,8 @@ public class IO {
 
     public static InvertibleDigitalInput pivotLowerLimit = new InvertibleDigitalInput(0, false);
     public static InvertibleDigitalInput pivotUpperLimit = new InvertibleDigitalInput(1, false);
+    public static DigitalInput redBtn = new  DigitalInput(2);
+    public static DigitalOutput redLed = new DigitalOutput(3);
 
 
     // Initialize any hardware here
