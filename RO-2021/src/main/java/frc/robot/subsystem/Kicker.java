@@ -1,6 +1,7 @@
 package frc.robot.subsystem;
 
 import edu.wpi.first.wpilibj.Victor;
+import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import frc.robot.io.hdw_io.IO;
 import frc.robot.io.joysticks.JS_IO;
 
@@ -19,9 +20,9 @@ public class Kicker{
     }
 
     public static void update() {
-       if(JS_IO.axLeftY.get() >= 0.8 && IO.pivotUpperLimit.get()) {
+       if(JS_IO.lowerKicker.get() >= 0.8 && IO.pivotUpperLimit.get()) {
            pivot.set(-pivotSpeed);
-       } else if(JS_IO.coJoystick.getY() <= -0.8 && IO.pivotLowerLimit.get()) {
+       } else if(JS_IO.raiseKicker.get() >= 0.8 && IO.pivotLowerLimit.get()) {
            pivot.set(pivotSpeed);
        //} else if(JoystickIO.pivotDownButton.isDown() && JoystickIO.pivotUpButton.isDown()) {
        //    pivot.set(0);
@@ -36,6 +37,14 @@ public class Kicker{
        } else {
            kicker.set(0);
        }
+
+       sdbUpdate();
     }
     
+    public static void sdbUpdate(){
+        SmartDashboard.putNumber("Lower Kicker", JS_IO.lowerKicker.get());
+        SmartDashboard.putNumber("Raise Kicker", JS_IO.raiseKicker.get());
+        SmartDashboard.putBoolean("Pivot Upper Limit", IO.pivotUpperLimit.get());
+        SmartDashboard.putBoolean("Pivot Lower Limit", IO.pivotLowerLimit.get());
+    }
 }

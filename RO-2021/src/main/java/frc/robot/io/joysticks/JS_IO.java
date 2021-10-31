@@ -46,6 +46,9 @@ public class JS_IO {
     public static Button kickerLowButton = new Button();    //Lower kicker, ball high
     public static Button kickerHiButton = new Button();   //Raise kicker, ball level
 
+    public static Axis lowerKicker = new Axis();
+    public static Axis raiseKicker = new Axis();
+
 
     // Constructor
     public JS_IO() {
@@ -146,6 +149,11 @@ public class JS_IO {
 
         kickerLowButton.setButton(gamePad, 3);
         kickerHiButton.setButton(gamePad, 4);
+
+        lowerKicker.setAxis(gamePad, 2); //Left Trigger
+        raiseKicker.setAxis(gamePad, 3); // Right Trigger
+
+        
     }
 
     // ----------- Normal 2 Joysticks -------------

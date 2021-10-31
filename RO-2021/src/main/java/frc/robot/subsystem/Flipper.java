@@ -6,19 +6,19 @@ import frc.robot.io.joysticks.JS_IO;
 
 public class Flipper{
 
-    private Victor frameArm = IO.frameArmMotor;
+    private static Victor frameArm = IO.frameArmMotor;
 
-    private double flipperSpeed;
+    private static double flipperSpeed;
 
     public Flipper() {
     }
 
-    public void init() {
+    public static void init() {
         frameArm.set(0);
         flipperSpeed = 0.8;
     }
 
-    public void update() {
+    public static void update() {
         if(JS_IO.roExtButton.isDown()) {
             frameArm.set(flipperSpeed);
         } else if(JS_IO.roRetButton.isDown()) {

@@ -7,8 +7,8 @@ public class IO {
     public static NavX navX = new NavX();
 
     //Drive
-    public static Victor leftDriveMotor = new Victor(0);
-    public static Victor rightDriveMotor = new Victor(1);
+    public static Victor leftDriveMotor = new Victor(1);
+    public static Victor rightDriveMotor = new Victor(0);
     
     //Rollover frame
     public static Victor frameArmMotor = new Victor(2);
