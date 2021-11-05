@@ -30,11 +30,21 @@ public class Kicker{
            pivot.set(0);
        }
 
+    //    if (JS_IO.kickerHiButton.onButtonPressed() && kicker.get() == 0)
+    //    {
+    //        kicker.set(1);
+    //    }
+    //    else if (JS_IO.kickerHiButton.onButtonPressed() && kicker.get() == 1)
+    //    {
+    //        kicker.set(0);
+    //    }
+
        if(JS_IO.kickerHiButton.isDown()) {
            kicker.set(kickerSpeed);
-       } else if(JS_IO.kickerLowButton.isDown()) {
-           kicker.set(-kickerSpeed);
-       } else {
+       }
+    // // else if(JS_IO.kickerLowButton.isDown()) {
+    // //        kicker.set(-kickerSpeed);} 
+    else {
            kicker.set(0);
        }
 
