@@ -11,14 +11,14 @@ public class IO {
     public static Victor rightDriveMotor = new Victor(0);
     
     //Rollover frame
-    public static Victor frameArmMotor = new Victor(2);
+    public static Victor frameArmMotor = new Victor(2); //+ to extend, - to retract
 
     //Kicker
-    public static Victor kickerMotor = new Victor(3);
-    public static Victor pivotMotor = new Victor(4);
+    public static Victor kickerMotor = new Victor(3);   //+ only!
+    public static Victor pivotMotor = new Victor(4);    //+ is down, - is up
 
-    public static InvertibleDigitalInput pivotLowerLimit = new InvertibleDigitalInput(0, false);
-    public static InvertibleDigitalInput pivotUpperLimit = new InvertibleDigitalInput(1, false);
+    public static InvertibleDigitalInput pivotLowerLimit = new InvertibleDigitalInput(0, false);    //false stop down
+    public static InvertibleDigitalInput pivotUpperLimit = new InvertibleDigitalInput(1, false);    //false stop up
 
 
     // Initialize any hardware here
