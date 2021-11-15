@@ -6,24 +6,25 @@ import frc.robot.io.hdw_io.IO;
 import frc.robot.io.joysticks.Button;
 import frc.robot.io.joysticks.JS_IO;
 
-public class Kicker{
+public class FrameRO{
 
     //Assign hdw
-    private static Victor kicker = IO.kickerMotor;
+    private static Victor frameExt = IO.frameArmMotor;  //Pos. spd to extend.
 
     //Assigned JS's
-    private static Button kickBall = JS_IO.kickerSpin;  //3JS R1, GP 6(RB)
+    private static Button btnExtRollover = JS_IO.roExtButton;   //3JS R6, GP 1(A)
+    private static Button btnRetRollover = JS_IO.roRetButton;   //3JS R4, GP 2(B)
 
     //Assign variables
     private static int state = 0;
-    private static double kickerSpeed = 0.8;    //Speed to spin kicker
+    private static double frameSpeed = 0.8; //Speed to Extend & Retract
 
     /**
-     * Runs the kicker bar to kick balls down the field.
+     * Runs the top frame to right the robot if upside down.
      * <p>
      * <p>Constructor, not needed, just because.
      */
-    public Kicker(){
+    public FrameRO(){
     }
 
     /**
@@ -39,12 +40,18 @@ public class Kicker{
      * This is called from robot autonomous/telopPeriodic every 20mS to evaluate
      * hardware or joystick actions to set the state.
      * <p>
-     * <p>Pressing JS button toggles kicker on & off.
+     * <p>Pressing JS button extends frame.  Pressing another retracts it.
      * <P>
      * <P>Note: Determ was renamed to update & update is now updateSM.
      */
     public static void update() {
-        if(kickBall.onButtonPressed()) state = state > 0 ? 0 : 1;
+        if(btnExtRollover.isDown()){
+            state = 1;
+        }else if(btnRetRollover.isDown()){
+            state = 2;
+        }else{
+            state = 0;
+        }
 
         updateSM();
         sdbUpdate();
@@ -52,37 +59,41 @@ public class Kicker{
 
     /**
      * Update state machine.
-     * <p>0 = Off.  1 = Run kicker.
+     * <p>0 = Off.  1 = Extend frame.  2 = Retract frame
+     * <p>No end switches.  Stop visually.
      */
     private static void updateSM(){
         switch(state){
             case 0: //All Off
                 cmdUpdate(0.0);
             break;
-            case 1: //Run kicker
-                cmdUpdate(kickerSpeed);
+            case 1: //Raise pivot to upper limit
+                cmdUpdate(frameSpeed);
+            break;
+            case 2: //Lower pivot to lower limit
+                cmdUpdate(-frameSpeed);
             break;
             default:
-            System.out.println("Bad state for Kicker - " + state);
+                System.out.println("Bad state for FrameRO - " + state);
         }
     }
 
     /**
      * Issue commands to hardware.  Any safeties MUST be included here
      * to prevent damage to hardware.
-     * @param kickerSpd
+     * @param frameSpd
      */
-    private static void cmdUpdate(double kickerSpd){
-        kicker.set(Math.abs(kickerSpd));    //Forward only
+    private static void cmdUpdate(double frameSpd){
+        frameExt.set(frameSpd);
     }
 
     /** Initialize any sdb objects that are later retrieve from sdb. */
     private static void sdbInit(){
-        SmartDashboard.putNumber("Kicker/Kicker Spd", kickerSpeed);
+        SmartDashboard.putNumber("Frame/Spd Ext & Retract", frameSpeed);
     }
 
     /** Update sdb objects. */
     public static void sdbUpdate(){
-        kickerSpeed = SmartDashboard.getNumber("Kicker/Kicker Spd", kickerSpeed);
+        frameSpeed = SmartDashboard.getNumber("Frame/Spd Ext & Ret", frameSpeed);
     }
 }

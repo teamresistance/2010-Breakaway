@@ -40,15 +40,12 @@ public class JS_IO {
     public static Axis axRightX = new Axis();       // Right JS X
 
     //Buttons
+    public static Button kickerSpin = new Button();         //Toggle kicker spinning
+    public static Button kickerLowButton = new Button();    //Lower kicker, ball high
+    public static Button kickerHiButton = new Button();     //Raise kicker, ball level
+
     public static Button roExtButton = new Button();    //Rollover extend
     public static Button roRetButton = new Button();    //Rollover retract
-
-    public static Button kickerLowButton = new Button();    //Lower kicker, ball high
-    public static Button kickerHiButton = new Button();   //Raise kicker, ball level
-
-    public static Axis lowerKicker = new Axis();
-    public static Axis raiseKicker = new Axis();
-
 
     // Constructor
     public JS_IO() {
@@ -92,6 +89,7 @@ public class JS_IO {
         // jsConfig = (int) SmartDashboard.getNumber("JS_Config", 0);
         jsConfig = chsr.getSelected() == null ? 0 : chsr.getSelected();
         SmartDashboard.putNumber("JS/JS_Config", jsConfig);
+        sdbUpdChsr();
 
         switch (jsConfig) {
             case 0: // Normal 3 joystick config
@@ -122,7 +120,6 @@ public class JS_IO {
         // All stick axisesssss
         axLeftDrive.setAxis(leftJoystick, 1);
         axRightDrive.setAxis(rightJoystick, 1);
-        // axClimb.setAxis(coJoystick, 1);
 
         axLeftX.setAxis(leftJoystick, 0);
         axLeftY.setAxis(leftJoystick, 1);
@@ -135,13 +132,15 @@ public class JS_IO {
 
         kickerLowButton.setButton(rightJoystick, 5);
         kickerHiButton.setButton(rightJoystick, 3);
+
+        kickerSpin.setButton(rightJoystick, 1);
     }
 
     // ----- gamePad only --------
     private static void a_GP() {
         // All stick axisesssss
-        axLeftDrive.setAxis(gamePad, 1); // left stick Y
-        axRightDrive.setAxis(gamePad, 5); // right stick Y
+        axLeftDrive.setAxis(gamePad, 1);
+        axRightDrive.setAxis(gamePad, 5);
 
         // Drive buttons
         roExtButton.setButton(gamePad, 1);
@@ -150,10 +149,7 @@ public class JS_IO {
         kickerLowButton.setButton(gamePad, 3);
         kickerHiButton.setButton(gamePad, 4);
 
-        lowerKicker.setAxis(gamePad, 2); //Left Trigger
-        raiseKicker.setAxis(gamePad, 3); // Right Trigger
-
-        
+        kickerSpin.setButton(gamePad, 6);
     }
 
     // ----------- Normal 2 Joysticks -------------
@@ -169,6 +165,8 @@ public class JS_IO {
 
         kickerLowButton.setButton(rightJoystick, 5);
         kickerHiButton.setButton(rightJoystick, 3);
+
+        kickerSpin.setButton(rightJoystick, 1);
     }
 
     // ----------- Case Default -----------------
@@ -183,5 +181,7 @@ public class JS_IO {
 
         kickerLowButton.setButton(null, 0);
         kickerHiButton.setButton(null, 0);
+
+        kickerSpin.setButton(null, 0);
     }
 }
