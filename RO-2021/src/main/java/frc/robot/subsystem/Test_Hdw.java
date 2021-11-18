@@ -38,7 +38,7 @@ public class Test_Hdw {
     //Variables
     
     public static void init(){
-
+        sdbInit();
     }
 
     public static void update(){
